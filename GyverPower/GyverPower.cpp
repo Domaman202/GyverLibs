@@ -72,9 +72,15 @@ void GyverPower::autoCalibrate(void) {
 }
 
 void GyverPower::calibrate(uint16_t ms) { 	// пересчет массива таймаутов
-	for (uint8_t i = 0; i < 9 ; i++) { 		// пересчитываем массив
-		timeOuts[9 - i] = (ms >> i);
-	}
+	timeOuts[9] = (ms >> 0);
+	timeOuts[8] = (ms >> 1);
+	timeOuts[7] = (ms >> 2);
+	timeOuts[6] = (ms >> 3);
+	timeOuts[5] = (ms >> 4);
+	timeOuts[4] = (ms >> 5);
+	timeOuts[3] = (ms >> 6);
+	timeOuts[2] = (ms >> 7);
+	timeOuts[1] = (ms >> 8);
 }
 
 void GyverPower::sleep(sleepprds_t period) {
